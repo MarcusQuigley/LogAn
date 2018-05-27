@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Quigley.LogAn
 {
-    class LogAnalyzer
+   public class LogAnalyzer
     {
+        public bool IsValidLogFileName(string fileName)
+        {
+            return (fileName.EndsWith("SLF"));
+        }
     }
 }

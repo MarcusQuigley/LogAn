@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quigley.LogAn", "Quigley.LogAn\Quigley.LogAn.csproj", "{4A7B7A4B-B406-4084-8E04-77B5E5AA38B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1351CBAE-F162-4A7F-8B6F-5FE3CFC325FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quigley.LogAn.Tests", "Quigley.LogAn.Tests\Quigley.LogAn.Tests.csproj", "{A3B52765-86BA-4C84-A32B-DB632832DA17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{4A7B7A4B-B406-4084-8E04-77B5E5AA38B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A7B7A4B-B406-4084-8E04-77B5E5AA38B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A7B7A4B-B406-4084-8E04-77B5E5AA38B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B52765-86BA-4C84-A32B-DB632832DA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B52765-86BA-4C84-A32B-DB632832DA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B52765-86BA-4C84-A32B-DB632832DA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B52765-86BA-4C84-A32B-DB632832DA17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3B52765-86BA-4C84-A32B-DB632832DA17} = {1351CBAE-F162-4A7F-8B6F-5FE3CFC325FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAEFB2DB-25DD-4625-B281-EC646004BE05}
