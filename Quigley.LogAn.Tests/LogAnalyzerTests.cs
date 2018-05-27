@@ -4,6 +4,8 @@ using Testing =  Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Quigley.LogAn.Tests
 {
+  
+    
     [TestClass]
     public class LogAnalyzerTests
     {
@@ -15,6 +17,9 @@ namespace Quigley.LogAn.Tests
             analyzer = new LogAnalyzer();
         }
 
+        #region Basic Tests Chapter 2
+
+        [TestCategory("Chapter 2")]
         [TestMethod]
         public void IsValidFileName_validFileLowerCased_ReturnsTrue()
         {
@@ -23,6 +28,7 @@ namespace Quigley.LogAn.Tests
             Assert.IsTrue(result, "filename not valid");
         }
 
+        [TestCategory("Chapter 2")]
         [TestMethod]
         public void IsValidFileName_validFileUpperCased_ReturnsTrue()
         {
@@ -30,13 +36,29 @@ namespace Quigley.LogAn.Tests
 
             Assert.IsTrue(result, "filename not valid");
         }
+        [TestCategory("Chapter 2")]
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void Emptyfilename_throws_argumentexception()
         {
             analyzer.IsValidLogFileName(string.Empty);
         }
- 
+
+        /// <summary>
+        /// State based test. I examine the state of the class under test.
+        /// In this case a property of LogAnalyzer.
+        /// </summary>
+        [TestCategory("Chapter 2")]
+        [TestMethod]
+        public void IsValidFileName_validfile_rememberstrue()  
+        {
+            analyzer.IsValidLogFileName("somefile.slf");
+
+            Assert.IsTrue(analyzer.LastFileNameValid);
+        }
+
+        #endregion
+
         [TestCleanup]
         public void Cleanup()
         {

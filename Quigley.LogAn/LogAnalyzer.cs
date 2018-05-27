@@ -8,14 +8,18 @@ namespace Quigley.LogAn
 {
    public class LogAnalyzer
     {
+        public bool LastFileNameValid { get; set; }
         public bool IsValidLogFileName(string fileName)
         {
             if (!string.IsNullOrEmpty(fileName))
             {
-                return (fileName.ToLower().EndsWith(".slf"));
+                var result = fileName.ToLower().EndsWith(".slf");
+                LastFileNameValid = result;
+                return result;
             }
             else
             {
+                LastFileNameValid = false;
                 throw new ArgumentException("No filename provided!");
             }
         }
