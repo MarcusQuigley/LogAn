@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Testing =  Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Quigley.LogAn.Tests
 {
@@ -29,7 +30,13 @@ namespace Quigley.LogAn.Tests
 
             Assert.IsTrue(result, "filename not valid");
         }
-
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Emptyfilename_throws_argumentexception()
+        {
+            analyzer.IsValidLogFileName(string.Empty);
+        }
+ 
         [TestCleanup]
         public void Cleanup()
         {

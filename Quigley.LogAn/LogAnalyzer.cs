@@ -10,7 +10,14 @@ namespace Quigley.LogAn
     {
         public bool IsValidLogFileName(string fileName)
         {
-            return (fileName.ToLower().EndsWith(".slf"));
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                return (fileName.ToLower().EndsWith(".slf"));
+            }
+            else
+            {
+                throw new ArgumentException("No filename provided!");
+            }
         }
     }
 }
