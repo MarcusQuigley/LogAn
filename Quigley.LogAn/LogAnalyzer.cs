@@ -10,7 +10,7 @@ namespace Quigley.LogAn
     {
         public bool IsValidLogFileName(string fileName)
         {
-            return (fileName.EndsWith("SLF"));
+            return (fileName.ToLower().EndsWith(".slf"));
         }
     }
 }

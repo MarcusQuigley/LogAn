@@ -7,13 +7,13 @@ namespace Quigley.LogAn.Tests
     public class LogAnalyzerTests
     {
         [TestMethod]
-        public void IsValidFileName_validFile_ReturnsTrue()
+        public void IsValidFileName_validFileLowerCased_ReturnsTrue()
         {
             LogAnalyzer analyzer = new LogAnalyzer();
 
             var result = analyzer.IsValidLogFileName("e.SLF");
 
-            Assert.IsTrue(result, "filename doesnt have .SLF");
+            Assert.IsTrue(result, "filename not valid");
         }
     }
 }
