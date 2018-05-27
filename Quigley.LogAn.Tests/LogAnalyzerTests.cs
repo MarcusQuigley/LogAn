@@ -80,6 +80,27 @@ namespace Quigley.LogAn.Tests
         }
 
         #endregion
+
+
+        #region Interaction Testing Chapter 3
+        //Interaction testing is testing how an object sends input to or receives input from other objects
+        
+        //A mock object is a fake object in the system that decides whether the unit test has passed or failed
+
+        [TestMethod]
+        [TestCategory("Chapter 4")]
+        public void Analyze_filenametooshort_callwebservice()
+        {
+            var mock = new MockWebService();
+            LogAnalyzer log = new LogAnalyzer(null, mock);
+            var filename  = "er.slf";
+            log.Analyze(filename);
+
+            Assert.AreEqual(mock.LastError, $"filename is too short: {filename}");
+
+        }
+
+        #endregion
         [TestCleanup]
         public void Cleanup()
         {

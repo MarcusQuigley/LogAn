@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="LogAnalyzerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stubs\MockWebService.cs" />
     <Compile Include="Stubs\StubFileExtensionManager.cs" />
   </ItemGroup>
   <ItemGroup>

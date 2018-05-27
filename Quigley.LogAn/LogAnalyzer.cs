@@ -9,15 +9,22 @@ namespace Quigley.LogAn
     public class LogAnalyzer
     {
         readonly IExtensionManager fileExtensionManager;
+        readonly IWebService webservice;
 
         public LogAnalyzer()
         {
             fileExtensionManager = new FileExtensionManager();
         }
 
-        public LogAnalyzer(IExtensionManager mgr)
+        public LogAnalyzer(IExtensionManager mgr )
         {
             fileExtensionManager = mgr;
+         }
+
+        public LogAnalyzer(IExtensionManager mgr, IWebService webService)
+            :this(mgr)
+        {
+            webservice = webService;
         }
 
         public bool LastFileNameValid { get; set; }
@@ -50,6 +57,14 @@ namespace Quigley.LogAn
             {
                 LastFileNameValid = false;
                 throw new ArgumentException("No filename provided!");
+            }
+        }
+
+        public void Analyze(string fileName)
+        {
+            if (fileName.Length < 8)
+            {
+                webservice.LogError($"filename is too short: {fileName}");
             }
         }
     }
